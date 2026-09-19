@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cima 103.7 FM — La Mundial · Salsa, Merengue y Bachata 24/7</title>
+<meta name="description" content="La Mundial Cadena Cima 103.7 FM. La radio tropical de Puerto Rico: merengue, bachata, salsa, urbano y la música del ayer, las 24 horas. El puente musical entre Puerto Rico y República Dominicana.">
+<meta name="theme-color" content="#0A0714">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cima 103.7 FM — La Mundial">
+<meta property="og:description" content="Rompiendo la radio. Música tropical 24/7 desde Bayamón, Puerto Rico para el mundo.">
+<meta property="og:locale" content="es_DO">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cima 103.7 FM — La Mundial">
+<meta name="twitter:description" content="Rompiendo la radio. Música tropical 24/7 desde Bayamón, Puerto Rico.">
+<meta name="twitter:image" content="assets/og-image.png">
+<link rel="preload" as="image" href="assets/logo-3d-cima.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RadioStation","name":"Cima 103.7 FM","alternateName":"La Mundial Cadena Cima","frequency":"103.7 FM","broadcastFrequency":"103.7 FM","areaServed":"Puerto Rico","address":{"@type":"PostalAddress","streetAddress":"Calle Jade NZ8, Santa Juanita","addressLocality":"Bayamón","addressRegion":"PR","postalCode":"00956","addressCountry":"US"},"telephone":"+1-787-787-1600","email":"cima103.7fm@gmail.com","sameAs":["https://www.facebook.com/cima103fm/","https://www.instagram.com/cima103/"]}
+</script>
+<style>
+/* ============================================================
+   CIMA 103.7 · DESIGN SYSTEM v2 — "Oro Fundido"
+   Tokens → Primitives → Layout → Components → Motion
+   ============================================================ */
+:root{
+  /* Color */
+  --gold:#F5A623; --gold-hot:#FFC24B; --gold-deep:#B87400;
+  --coral:#E84855; --coral-hot:#FF6B76;
+  --plum:#1A0A2E; --plum-2:#2A1150; --navy:#101A3C;
+  --void:#0A0714; --void-2:#0E0A1D;
+  --cream:#FFF8F0; --gray:#9AA0B5; --gray-dim:#7C8194;
+  --line:rgba(245,166,35,.14);
+  --line-soft:rgba(255,255,255,.07);
+  /* Type */
+  --f-display:"Fraunces",Georgia,serif;
+  --f-head:"Sora",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,sans-serif;
+  /* Space / Shape */
+  --gutter:clamp(20px,5vw,48px);
+  --section:clamp(72px,9vw,128px);
+  --r-lg:24px; --r-md:16px; --r-sm:10px; --r-full:999px;
+  /* Elevation */
+  --sh-1:0 2px 8px rgba(0,0,0,.35);
+  --sh-2:0 12px 40px rgba(0,0,0,.45);
+  --sh-gold:0 8px 32px rgba(245,166,35,.25),0 2px 8px rgba(245,166,35,.15);
+  /* Motion */
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --t-fast:.25s; --t-med:.5s; --t-slow:.9s;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--void); color:var(--cream);
+  font-family:var(--f-body); font-size:16px; line-height:1.6;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:var(--void)}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ---------- Primitives ---------- */
+.container{max-width:1200px;margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--f-head);font-size:.72rem;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.h2{
+  font-family:var(--f-display);font-weight:900;
+  font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.05;
+  letter-spacing:-.01em;margin:14px 0 12px;
+}
+.h2 em{font-style:normal;background:linear-gradient(120deg,var(--gold) 20%,var(--coral) 90%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{color:var(--gray);font-size:clamp(1rem,1.4vw,1.125rem);max-width:56ch}
+.section{padding-block:var(--section);position:relative}
+.section-head{margin-bottom:clamp(36px,5vw,64px)}
+.section-head.center{text-align:center}
+.section-head.center .eyebrow::before{display:none}
+
+/* Buttons */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;border-radius:var(--r-full);
+  font-family:var(--f-head);font-weight:700;font-size:.95rem;letter-spacing:.01em;
+  transition:transform var(--t-fast) var(--ease-spring),box-shadow var(--t-fast),background var(--t-fast);
+  will-change:transform;white-space:nowrap;overflow:hidden;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold) 0%,#F08C2E 55%,var(--coral) 130%);
+  color:#1B0E00;box-shadow:var(--sh-gold);
+}
+.btn-primary::after{ /* sheen sweep */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  transform:translateX(-120%);transition:transform .6s var(--ease-out);
+}
+.btn-primary:hover::after{transform:translateX(120%)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 44px rgba(245,166,35,.4)}
+.btn-ghost{
+  border:1px solid var(--line-soft);color:var(--cream);
+  background:rgba(255,255,255,.03);backdrop-filter:blur(8px);
+}
+.btn-ghost:hover{border-color:var(--line);background:rgba(245,166,35,.07);transform:translateY(-2px)}
+.btn-ghost svg{width:16px;height:16px}
+
+/* Reveal-on-scroll */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ============================================================
+   LA SEÑAL · sistema de movimiento firma Cima
+   1. Pulso de transmisión  2. Barrido de frecuencia
+   3. Tick de sintonía      4. Halo en vivo
+   ============================================================ */
+@keyframes sig-pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.35)}55%{box-shadow:0 0 0 12px rgba(245,166,35,0)}}
+@keyframes sig-halo-gold{0%,100%{box-shadow:0 0 28px rgba(245,166,35,.22)}50%{box-shadow:0 0 58px rgba(245,166,35,.48)}}
+@keyframes sig-halo-coral{0%,100%{box-shadow:0 0 18px rgba(232,72,85,.18)}50%{box-shadow:0 0 36px rgba(232,72,85,.42)}}
+@keyframes sig-sweep-line{0%{width:0}100%{width:28px}}
+@keyframes sig-sweep-dot{0%{left:0;opacity:0}25%{opacity:1}85%{opacity:1}100%{left:28px;opacity:0}}
+@keyframes sig-tick{0%{transform:scale(1)}35%{transform:scale(.93)}100%{transform:scale(1)}}
+.eyebrow{position:relative}
+.section-head.in .eyebrow::before{animation:sig-sweep-line .9s var(--ease-out) both}
+.section-head.in .eyebrow::after{
+  content:"";position:absolute;left:0;top:50%;margin-top:-2px;
+  width:4px;height:4px;border-radius:50%;background:var(--gold-hot);
+  box-shadow:0 0 8px var(--gold);animation:sig-sweep-dot .9s var(--ease-out) both;
+}
+.section-head.center .eyebrow::after{display:none}
+.sig-tick-on{animation:sig-tick .28s var(--ease-spring)!important}
+.player-shell.playing{animation:sig-halo-gold 2.6s ease-in-out infinite}
+.chip,.freq-pill{cursor:pointer}
+
+/* Grain + Aurora atmosphere (fixed, detrás de todo) */
+.atmosphere{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.atmosphere::before{ /* grain */
+  content:"";position:absolute;inset:-50%;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 7s steps(8) infinite;
+}
+@keyframes grain{0%,100%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-2%)}}
+.aurora{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5;will-change:transform}
+.aurora.a1{width:56vw;height:56vw;background:radial-gradient(circle,rgba(245,166,35,.22),transparent 65%);top:-24vw;right:-18vw;animation:drift1 26s ease-in-out infinite alternate}
+.aurora.a2{width:48vw;height:48vw;background:radial-gradient(circle,rgba(232,72,85,.16),transparent 65%);top:34vh;left:-20vw;animation:drift2 32s ease-in-out infinite alternate}
+.aurora.a3{width:40vw;height:40vw;background:radial-gradient(circle,rgba(42,17,80,.5),transparent 70%);bottom:-18vw;right:6vw;animation:drift1 38s ease-in-out infinite alternate-reverse}
+@keyframes drift1{to{transform:translate(-9vw,7vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(11vw,-6vh) scale(.9)}}
+
+/* Scroll progress */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:2000;
+  background:linear-gradient(90deg,var(--gold),var(--coral));box-shadow:0 0 12px rgba(245,166,35,.6)}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  transition:background var(--t-med),border-color var(--t-med);
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(10,7,20,.72);backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);
+  border-bottom-color:var(--line-soft);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav-logo{display:flex;align-items:center;gap:12px;position:relative;z-index:2}
+.nav-mark{
+  width:42px;height:42px;border-radius:14px;position:relative;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  display:grid;place-items:center;font-family:var(--f-display);
+  font-weight:900;font-size:.72rem;color:#1B0E00;letter-spacing:-.02em;
+  box-shadow:var(--sh-gold);transition:transform var(--t-fast) var(--ease-spring);
+}
+.nav-logo:hover .nav-mark{transform:rotate(-8deg) scale(1.06)}
+.nav-word{display:flex;flex-direction:column;line-height:1.05}
+.nav-word b{font-family:var(--f-display);font-size:1.15rem;font-weight:900;letter-spacing:.02em}
+.nav-word span{font-size:.58rem;letter-spacing:.3em;color:var(--gold);font-weight:700}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-live{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+  border-radius:var(--r-full);border:1px solid rgba(232,72,85,.35);
+  background:rgba(232,72,85,.1);font-size:.72rem;font-weight:700;
+  letter-spacing:.14em;color:var(--coral-hot);text-transform:uppercase;
+  animation:sig-halo-coral 2.8s ease-in-out infinite;
+}
+.dot-live{width:7px;height:7px;border-radius:50%;background:var(--coral-hot);box-shadow:0 0 10px var(--coral-hot);animation:blink 1.6s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.nav-burger{display:none;width:44px;height:44px;border-radius:12px;place-items:center;border:1px solid var(--line-soft);position:relative;z-index:2}
+.nav-burger span{display:block;width:18px;height:2px;background:var(--cream);position:relative;transition:background var(--t-fast)}
+.nav-burger span::before,.nav-burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--cream);transition:transform var(--t-fast) var(--ease-out),top var(--t-fast)}
+.nav-burger span::before{top:-6px}.nav-burger span::after{top:6px}
+.nav-open .nav-burger span{background:transparent}
+.nav-open .nav-burger span::before{top:0;transform:rotate(45deg)}
+.nav-open .nav-burger span::after{top:0;transform:rotate(-45deg)}
+.nav-mute{
+  display:grid;place-items:center;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line-soft);color:var(--gray);position:relative;z-index:2;
+  transition:color var(--t-fast),border-color var(--t-fast);
+}
+.nav-mute:hover{color:var(--gold);border-color:var(--line)}
+.nav-mute svg{width:18px;height:18px}
+.nav-mute .ic-off{display:none}
+.muted .nav-mute .ic-on{display:none}
+.muted .nav-mute .ic-off{display:block}
+.nav-menu{display:flex;gap:6px;align-items:center}
+.nav-menu a{
+  padding:10px 16px;border-radius:var(--r-full);font-size:.86rem;font-weight:500;
+  color:var(--gray);transition:color var(--t-fast),background var(--t-fast);
+}
+.nav-menu a:hover{color:var(--cream);background:rgba(255,255,255,.05)}
+.nav-menu a.active{color:var(--gold);background:rgba(245,166,35,.08)}
+@media(max-width:960px){
+  .nav-burger{display:grid}
+  .nav-live{display:none}
+  .nav-menu{
+    position:fixed;inset:0;background:rgba(10,7,20,.96);backdrop-filter:blur(30px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    opacity:0;pointer-events:none;transition:opacity var(--t-med);
+  }
+  .nav-open .nav-menu{opacity:1;pointer-events:auto}
+  .nav-menu a{font-family:var(--f-head);font-size:1.6rem;font-weight:700;padding:14px;color:var(--gray)}
+  .nav-menu a.active,.nav-menu a:hover{color:var(--gold)}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:clamp(24px,4vw,64px);
+  padding-top:120px;padding-bottom:80px;position:relative;
+}
+.hero-copy{position:relative;z-index:2}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:10px 20px;border-radius:var(--r-full);
+  background:rgba(232,72,85,.08);border:1px solid rgba(232,72,85,.3);
+  font-family:var(--f-head);font-size:.74rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--coral-hot);
+  animation:badge-pulse 2.4s var(--ease-out) infinite;
+}
+@keyframes badge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,72,85,.35)}55%{box-shadow:0 0 0 14px rgba(232,72,85,0)}}
+.hero-title{
+  font-family:var(--f-display);font-weight:900;
+  font-size:clamp(4.2rem,11vw,8.6rem);
+  line-height:.92;letter-spacing:-.02em;margin:26px 0 8px;
+}
+.hero-title .cima{
+  display:block;background:linear-gradient(115deg,var(--gold-hot) 5%,var(--gold) 35%,var(--coral) 95%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-title .fm{
+  display:inline-block;font-size:clamp(1rem,1.8vw,1.4rem);
+  font-family:var(--f-head);font-weight:700;letter-spacing:.5em;
+  color:var(--gray);vertical-align:super;margin-left:6px;
+}
+.hero-tag{font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--gray);max-width:46ch;margin-bottom:14px}
+.hero-tag b{color:var(--cream);font-weight:600}
+.hero-genres{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.chip{
+  padding:7px 16px;border-radius:var(--r-full);font-size:.78rem;font-weight:600;
+  border:1px solid var(--line-soft);color:var(--gray);
+  transition:all var(--t-fast);
+}
+.chip:hover{border-color:var(--line);color:var(--gold);transform:translateY(-2px)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+/* --- Logo 3D (render Nano Banana + tilt + halo + orbit) --- */
+.logo-stage{
+  display:grid;place-items:center;position:relative;
+  perspective:1200px;min-height:380px;
+}
+.logo-scene{position:relative;transform-style:preserve-3d;will-change:transform;width:min(460px,88vw);aspect-ratio:4/3}
+.logo-img{
+  position:relative;z-index:2;width:100%;height:auto;display:block;
+  filter:drop-shadow(0 32px 64px rgba(0,0,0,.55));
+  animation:logo-float 6s ease-in-out infinite alternate;
+}
+@keyframes logo-float{from{transform:translateY(-9px)}to{transform:translateY(11px)}}
+
+.logo-halo{
+  position:absolute;width:130%;height:130%;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,166,35,.2),rgba(232,72,85,.08) 45%,transparent 70%);
+  filter:blur(30px);transform:translateZ(-40px);
+  animation:halo 5s ease-in-out infinite alternate;
+}
+@keyframes halo{from{opacity:.6;transform:translateZ(-40px) scale(.94)}to{opacity:1;transform:translateZ(-40px) scale(1.06)}}
+.logo-orbit{
+  position:absolute;inset:-26px;border-radius:50%;
+  border:1px solid rgba(245,166,35,.16);transform:translateZ(-20px) rotateX(72deg);
+  animation:orbit-spin 14s linear infinite;
+}
+.logo-orbit::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+@keyframes orbit-spin{to{transform:translateZ(-20px) rotateX(72deg) rotate(360deg)}}
+
+.hero-wave{
+  position:absolute;bottom:-2px;left:0;right:0;height:120px;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 100% at 50% 100%,rgba(245,166,35,.06),transparent 60%);
+}
+.scroll-cue{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--gray-dim);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;
+}
+.scroll-cue::after{content:"";width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:cue 1.8s var(--ease-out) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  border-block:1px solid var(--line);padding-block:16px;
+  background:rgba(245,166,35,.03);overflow:hidden;position:relative;
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:marquee 30s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{
+  font-family:var(--f-head);font-weight:800;font-size:.85rem;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--gray);
+  display:flex;align-items:center;gap:48px;white-space:nowrap;
+}
+.marquee span::after{content:"✦";color:var(--gold);font-size:.8rem}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   PLAYER — "Estudio Cima"
+   ============================================================ */
+.player-shell{
+  display:grid;grid-template-columns:auto 1fr auto;gap:clamp(20px,3vw,40px);
+  align-items:center;padding:clamp(24px,3.5vw,40px);
+  background:linear-gradient(145deg,rgba(42,17,80,.45),rgba(14,10,29,.8));
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--sh-2);position:relative;overflow:hidden;
+}
+.player-shell::before{ /* border beam giratorio */
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:conic-gradient(from var(--beam,0deg),transparent 0 78%,var(--gold) 88%,transparent 96%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:beam 7s linear infinite;pointer-events:none;
+}
+@property --beam{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes beam{to{--beam:360deg}}
+.player-art{
+  width:clamp(96px,12vw,150px);aspect-ratio:1;border-radius:20px;position:relative;
+  background:
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.2),transparent 40%),
+    conic-gradient(from 210deg,var(--gold),var(--coral),var(--plum-2),var(--gold));
+  box-shadow:var(--sh-2),inset 0 0 0 1px rgba(255,255,255,.12);
+  display:grid;place-items:center;
+  transition:transform var(--t-med) var(--ease-spring);
+}
+.player-art:hover{transform:rotate3d(1,-1,0,12deg)}
+.player-art .note svg{width:46px;height:46px;color:#1B0E00;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+.player-art::after{content:"";position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(circle at 70% 80%,rgba(10,7,20,.5),transparent 55%)}
+.player-meta{min-width:0}
+.player-label{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--coral-hot);font-weight:700;display:flex;align-items:center;gap:8px}
+.player-show{font-family:var(--f-display);font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:900;margin:6px 0 4px;line-height:1.15}
+.player-song{color:var(--gray);font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq-canvas{width:min(240px,42vw);height:28px;margin-top:12px;opacity:.92;display:block}
+.player-actions{display:flex;flex-direction:column;align-items:center;gap:16px}
+.btn-request{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;
+  border-radius:var(--r-full);border:1px solid var(--line);
+  font-family:var(--f-head);font-size:.78rem;font-weight:700;color:var(--gold);
+  transition:all var(--t-fast);
+}
+.btn-request:hover{background:rgba(245,166,35,.08);transform:translateY(-2px)}
+.btn-request svg{width:15px;height:15px}
+.btn-play{
+  width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold),var(--coral));color:#1B0E00;
+  box-shadow:var(--sh-gold);position:relative;
+  transition:transform var(--t-fast) var(--ease-spring),box-shadow var(--t-fast);
+}
+.btn-play::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(245,166,35,.3);animation:badge-pulse 2s infinite}
+.btn-play:hover{transform:scale(1.07)}
+.btn-play:active{transform:scale(.96)}
+.btn-play svg{width:26px;height:26px;margin-left:2px}
+.btn-play .ic-pause{display:none;margin-left:0}
+.playing .btn-play .ic-play{display:none}
+.playing .btn-play .ic-pause{display:block}
+.player-vol{display:flex;align-items:center;gap:10px;color:var(--gray)}
+.vol{appearance:none;-webkit-appearance:none;width:110px;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold) var(--fill,80%),rgba(255,255,255,.12) var(--fill,80%));outline:none;cursor:pointer}
+.vol::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(245,166,35,.7);cursor:grab}
+.vol::-moz-range-thumb{width:14px;height:14px;border:none;border-radius:50%;background:var(--gold)}
+.player-freq{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(20px,3vw,28px);
+  padding-top:clamp(20px,3vw,28px);border-top:1px solid var(--line-soft);
+}
+.freq-pill{
+  padding:8px 18px;border-radius:var(--r-full);font-family:var(--f-head);
+  font-size:.78rem;font-weight:700;letter-spacing:.06em;
+  background:rgba(255,255,255,.03);border:1px solid var(--line-soft);color:var(--gray);
+  transition:all var(--t-fast);
+}
+.freq-pill b{color:var(--gold)}
+.freq-pill:hover{border-color:var(--line);color:var(--cream);transform:translateY(-2px)}
+
+/* ---- Cobertura — la isla en vivo (video, sin audio) ---- */
+.map-stage{
+  max-width:920px;margin:0 auto;padding:clamp(14px,2.5vw,24px);
+  border-radius:var(--r-lg);border:1px solid var(--line);
+  background:radial-gradient(130% 130% at 50% 0%,rgba(42,17,80,.38),rgba(10,7,20,.65));
+  box-shadow:var(--sh-2);
+}
+.cover-video{width:100%;height:auto;display:block;border-radius:calc(var(--r-lg) - 8px)}
+
+/* ============================================================
+   PROGRAMACIÓN
+   ============================================================ */
+.day-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.day-tab{
+  padding:10px 22px;border-radius:var(--r-full);font-family:var(--f-head);
+  font-size:.82rem;font-weight:700;letter-spacing:.04em;
+  border:1px solid var(--line-soft);color:var(--gray);
+  transition:all var(--t-fast);
+}
+.day-tab:hover{color:var(--cream);border-color:var(--line)}
+.day-tab.active{
+  background:linear-gradient(135deg,rgba(245,166,35,.16),rgba(232,72,85,.1));
+  border-color:var(--line);color:var(--gold);
+}
+.timeline{position:relative;display:grid;gap:14px}
+.timeline::before{content:"";position:absolute;left:96px;top:12px;bottom:12px;width:1px;
+  background:linear-gradient(180deg,var(--line),var(--line-soft) 80%,transparent)}
+.show-card{
+  display:grid;grid-template-columns:84px 1fr auto;gap:20px;align-items:center;
+  padding:20px 24px;border-radius:var(--r-md);
+  background:rgba(255,255,255,.02);border:1px solid var(--line-soft);
+  transition:transform var(--t-fast) var(--ease-out),border-color var(--t-fast),background var(--t-fast);
+  position:relative;
+}
+.show-card:hover{transform:translateX(6px);border-color:var(--line);background:rgba(245,166,35,.04)}
+.show-time{
+  font-family:var(--f-head);font-weight:800;font-size:.9rem;color:var(--gold);
+  text-align:right;line-height:1.2;position:relative;z-index:1;
+}
+.show-time small{display:block;font-weight:500;font-size:.68rem;color:var(--gray-dim);letter-spacing:.1em}
+.show-name{font-family:var(--f-head);font-weight:700;font-size:1.02rem}
+.show-host{font-size:.82rem;color:var(--gray);margin-top:2px}
+.show-tag{
+  padding:6px 14px;border-radius:var(--r-full);font-size:.64rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
+}
+.show-tag.live{background:rgba(232,72,85,.14);color:var(--coral-hot);border:1px solid rgba(232,72,85,.35);animation:blink 1.6s infinite, sig-pulse 2.4s infinite}
+.show-tag.next{background:rgba(245,166,35,.08);color:var(--gold);border:1px solid var(--line)}
+@media(max-width:640px){
+  .timeline::before{left:14px}
+  .show-card{grid-template-columns:1fr;gap:8px;padding:18px}
+  .show-time{text-align:left}
+}
+.grid-note{
+  max-width:700px;margin:26px auto 0;padding:22px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-radius:var(--r-md);border:1px dashed var(--line);
+  background:rgba(245,166,35,.04);
+}
+.grid-note p{color:var(--gray);font-size:.9rem;max-width:44ch}
+.grid-note b{color:var(--cream)}
+
+/* ---- Pulido de élite (Pedazo E): a11y + estados de marca ---- */
+.skip-link{position:fixed;top:-64px;left:16px;z-index:4000;padding:12px 22px;border-radius:var(--r-full);background:var(--gold);color:#1B0E00;font-weight:700;font-family:var(--f-head);transition:top var(--t-fast) var(--ease-out)}
+.skip-link:focus-visible{top:14px}
+.map-stage.video-fallback{min-height:260px;display:grid;place-items:center}
+.map-stage.video-fallback .cover-video{display:none}
+.map-stage.video-fallback::after{content:"Señal en camino — La Mundial 24/7";color:var(--gold);font-family:var(--f-head);font-weight:700;letter-spacing:.08em}
+.h2{text-wrap:balance}
+
+/* ============================================================
+   LA MUNDIAL (about) + stats
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.about-copy p{color:var(--gray);line-height:1.85;margin-bottom:18px}
+.about-copy p b{color:var(--cream)}
+.sig-line{
+  display:inline-flex;align-items:baseline;gap:12px;margin-top:12px;
+  padding-top:20px;border-top:1px solid var(--line-soft);flex-wrap:wrap;
+}
+.sig-line b{font-family:var(--f-display);font-size:1.15rem;color:var(--gold)}
+.sig-line span{font-size:.8rem;color:var(--gray-dim)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{
+  padding:28px 24px;border-radius:var(--r-md);text-align:center;
+  background:linear-gradient(160deg,rgba(42,17,80,.4),rgba(255,255,255,.02));
+  border:1px solid var(--line-soft);position:relative;overflow:hidden;
+  transition:transform var(--t-fast) var(--ease-out),border-color var(--t-fast);
+}
+.stat:hover{transform:translateY(-4px);border-color:var(--line)}
+.stat-num{
+  font-family:var(--f-display);font-weight:900;font-size:clamp(2.2rem,4vw,3rem);
+  background:linear-gradient(180deg,var(--gold-hot),var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+}
+.stat-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-top:10px}
+
+/* ============================================================
+   VOCES (roster) — tilt cards con spotlight
+   ============================================================ */
+.roster{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.voice{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;
+  background:linear-gradient(165deg,rgba(42,17,80,.5),rgba(14,10,29,.9));
+  border:1px solid var(--line-soft);padding:32px 28px;
+  will-change:transform;
+  transition:border-color var(--t-fast);
+  min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.voice::before{ /* spotlight que sigue al mouse */
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(480px circle at var(--mx,50%) var(--my,0%),rgba(245,166,35,.14),transparent 55%);
+  opacity:0;transition:opacity var(--t-med);pointer-events:none;
+}
+.voice:hover::before{opacity:1}
+.voice:hover{border-color:var(--line)}
+.voice-avatar{
+  width:64px;height:64px;border-radius:20px;margin-bottom:auto;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  display:grid;place-items:center;font-family:var(--f-display);
+  font-weight:900;font-size:1.3rem;color:#1B0E00;
+  box-shadow:var(--sh-1);
+}
+.voice h3{font-family:var(--f-display);font-size:1.4rem;font-weight:900}
+.voice .role{font-size:.8rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:6px 0 10px}
+.voice p{font-size:.86rem;color:var(--gray);line-height:1.6}
+/* Pedazo D: cuando lleguen fotos reales, reemplazar .voice-avatar por:
+   <img class="voice-photo" src="assets/....jpg" alt="Nombre del host">
+   Tratamiento incluido abajo — cae sin tocar nada más. */
+.voice-photo{width:100%;height:200px;object-fit:cover;border-radius:var(--r-md);margin-bottom:auto;filter:saturate(1.05) contrast(1.02)}
+
+/* ============================================================
+   CONEXIÓN RD↔PR
+   ============================================================ */
+.bridge{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(16px,3vw,32px);
+  align-items:stretch;
+}
+.bridge-side{
+  padding:clamp(24px,3vw,40px);border-radius:var(--r-lg);
+  border:1px solid var(--line-soft);position:relative;overflow:hidden;
+}
+.bridge-side.pr{background:linear-gradient(150deg,rgba(16,26,60,.6),rgba(14,10,29,.7))}
+.bridge-side.rd{background:linear-gradient(150deg,rgba(42,17,80,.55),rgba(14,10,29,.7))}
+.bridge-flag{font-size:1.6rem;margin-bottom:10px}
+.bridge-side h3{font-family:var(--f-display);font-size:1.5rem;font-weight:900}
+.bridge-side p{font-size:.88rem;color:var(--gray);margin-top:8px;line-height:1.65}
+.bridge-link{
+  display:grid;place-items:center;position:relative;width:120px;
+}
+.bridge-link::before,.bridge-link::after{
+  content:"";grid-area:1/1;width:100%;height:1px;align-self:center;
+}
+.bridge-link::before{background:linear-gradient(90deg,transparent,var(--gold))}
+.bridge-link::after{background:linear-gradient(90deg,var(--coral),transparent)}
+.pulse-dot{
+  grid-area:1/1;width:14px;height:14px;border-radius:50%;align-self:center;justify-self:center;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  box-shadow:0 0 18px var(--gold);animation:bridge-pulse 2s infinite;
+  z-index:1;
+}
+@keyframes bridge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.5),0 0 18px var(--gold)}60%{box-shadow:0 0 0 18px rgba(245,166,35,0),0 0 18px var(--gold)}}
+@media(max-width:820px){
+  .bridge{grid-template-columns:1fr}
+  .bridge-link{height:70px;width:auto}
+  .bridge-link::before{background:linear-gradient(180deg,transparent,var(--gold));justify-self:center;height:100%;width:1px}
+  .bridge-link::after{background:linear-gradient(180deg,var(--coral),transparent)}
+}
+
+/* ============================================================
+   HISTORIAS — el puente hecho memoria (Pedazo D)
+   ============================================================ */
+.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.story{
+  position:relative;border-radius:var(--r-lg);padding:30px 28px;
+  background:linear-gradient(170deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  border:1px solid var(--line-soft);
+  transition:transform var(--t-med) var(--ease-out),border-color var(--t-fast);
+}
+.story:hover{transform:translateY(-6px);border-color:var(--line)}
+.story-year{
+  display:inline-block;padding:4px 14px;border-radius:var(--r-full);
+  background:rgba(245,166,35,.1);border:1px solid var(--line);
+  color:var(--gold);font-family:var(--f-head);font-size:.68rem;
+  font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+}
+.story h3{font-family:var(--f-display);font-size:1.25rem;font-weight:900;margin:14px 0 10px;line-height:1.25}
+.story p{font-size:.87rem;color:var(--gray);line-height:1.7}
+.story-src{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);font-size:.7rem;color:var(--gray-dim);letter-spacing:.06em}
+.story-num{
+  position:absolute;top:18px;right:24px;font-family:var(--f-display);
+  font-weight:900;font-size:2.6rem;line-height:1;
+  background:linear-gradient(180deg,var(--gold-hot),var(--gold-deep));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  opacity:.25;
+}
+@media(max-width:980px){.stories{grid-template-columns:1fr}}
+
+/* ============================================================
+   ANÚNCIATE — pricing
+   ============================================================ */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{
+  display:flex;flex-direction:column;padding:36px 30px;border-radius:var(--r-lg);
+  background:linear-gradient(170deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  border:1px solid var(--line-soft);position:relative;
+  transition:transform var(--t-med) var(--ease-out),border-color var(--t-fast),box-shadow var(--t-med);
+}
+.plan:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:var(--sh-2)}
+.plan.featured{
+  border-color:rgba(245,166,35,.4);
+  background:
+    radial-gradient(120% 90% at 50% 0%,rgba(245,166,35,.09),transparent 55%),
+    linear-gradient(170deg,rgba(42,17,80,.5),rgba(14,10,29,.85));
+  box-shadow:var(--sh-2);
+}
+.plan-flag{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  padding:5px 18px;border-radius:var(--r-full);white-space:nowrap;
+  background:linear-gradient(135deg,var(--gold),var(--coral));
+  color:#1B0E00;font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+}
+.plan-ico{margin-bottom:16px}
+.plan-ico svg{width:34px;height:34px;color:var(--gold)}
+.plan h3{font-family:var(--f-head);font-weight:800;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.plan-price{font-family:var(--f-display);font-weight:900;font-size:2.9rem;line-height:1;margin:14px 0 2px}
+.plan-price sup{font-size:1.1rem;vertical-align:super;margin-right:2px}
+.plan-period{font-size:.8rem;color:var(--gray-dim);margin-bottom:24px}
+.plan ul{list-style:none;flex:1;display:grid;gap:11px;margin-bottom:28px}
+.plan li{display:flex;gap:10px;font-size:.88rem;color:var(--gray);line-height:1.45}
+.plan li::before{content:"";flex-shrink:0;width:16px;height:16px;margin-top:3px;border-radius:50%;
+  background:rgba(245,166,35,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23F5A623' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px no-repeat}
+.plan .btn{margin-top:auto}
+.direct-line{
+  margin-top:clamp(28px,4vw,40px);padding:28px 32px;border-radius:var(--r-lg);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  background:linear-gradient(120deg,rgba(245,166,35,.07),rgba(232,72,85,.05));
+  border:1px solid var(--line);
+}
+.direct-line p{color:var(--gray);font-size:.92rem;max-width:52ch}
+.direct-line p b{color:var(--gold)}
+.direct-contact{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ============================================================
+   CONTACTO + FOOTER
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact-card{
+  padding:30px 28px;border-radius:var(--r-md);text-align:center;
+  background:rgba(255,255,255,.02);border:1px solid var(--line-soft);
+  transition:all var(--t-fast);
+}
+.contact-card:hover{border-color:var(--line);transform:translateY(-4px)}
+.contact-card .ico{margin-bottom:12px}
+.contact-card .ico svg{width:26px;height:26px;color:var(--gold)}
+.contact-card h4{font-family:var(--f-head);font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.contact-card a,.contact-card p{font-family:var(--f-head);font-weight:600;color:var(--cream);font-size:1rem}
+.contact-card a:hover{color:var(--gold)}
+footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(--section)}
+.foot-grid{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand .nav-mark{width:36px;height:36px;border-radius:12px;font-size:.62rem}
+.social{display:flex;gap:10px}
+.social a{
+  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  border:1px solid var(--line-soft);color:var(--gray);
+  transition:all var(--t-fast) var(--ease-spring);
+}
+.social a:hover{color:var(--gold);border-color:var(--line);transform:translateY(-3px) rotate(-4deg)}
+.social svg{width:18px;height:18px}
+.foot-legal{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.04);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.78rem;color:var(--gray-dim)}
+
+/* ============================================================
+   Toast + FAB móvil
+   ============================================================ */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translate(-50%,80px);
+  padding:14px 26px;border-radius:var(--r-full);z-index:3000;
+  background:rgba(26,10,46,.92);backdrop-filter:blur(20px);
+  border:1px solid var(--line);box-shadow:var(--sh-2);
+  font-size:.86rem;font-weight:600;opacity:0;pointer-events:none;
+  transition:transform var(--t-med) var(--ease-spring),opacity var(--t-med);
+  display:flex;align-items:center;gap:10px;max-width:90vw;text-align:center;
+}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.fab-listen{
+  display:none;position:fixed;bottom:22px;right:22px;z-index:1500;
+  padding:16px 26px;border-radius:var(--r-full);
+  background:linear-gradient(135deg,var(--gold),var(--coral));color:#1B0E00;
+  font-family:var(--f-head);font-weight:800;font-size:.9rem;box-shadow:var(--sh-gold);
+  align-items:center;gap:10px;
+}
+@media(max-width:640px){.fab-listen{display:inline-flex}}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:130px}
+  .hero-copy{order:1}
+  .logo-stage{order:2;min-height:320px}
+  .hero-tag,.hero-genres,.hero-cta{margin-inline:auto;justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .roster,.plans{grid-template-columns:1fr}
+  .plan.featured{order:-1}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#vivo">Saltar al contenido</a>
+
+<div class="progress" id="progress"></div>
+<div class="atmosphere">
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+</div>
+
+<!-- ══════════ NAV ══════════ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Cima 103.7 — Inicio">
+      <div class="nav-mark">103</div>
+      <div class="nav-word"><b>CIMA</b><span>LA MUNDIAL</span></div>
+    </a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#vivo" class="active">En Vivo</a>
+      <a href="#programacion">Programación</a>
+      <a href="#mundial">La Mundial</a>
+      <a href="#voces">Voces</a>
+      <a href="#anunciate">Anúnciate</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-live"><span class="dot-live"></span>On Air</span>
+      <button class="nav-mute" id="muteBtn" aria-label="Silenciar efectos de sonido" aria-pressed="false">
+        <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6.5 9H3.5v6h3L11 19V5z"/><path d="M15 9.5a3.5 3.5 0 0 1 0 5M17.5 7.5a6.5 6.5 0 0 1 0 9"/></svg>
+        <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6.5 9H3.5v6h3L11 19V5z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></svg>
+      </button>
+      <button class="nav-burger" id="burger" aria-label="Menú"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero container">
+  <div class="hero-copy">
+    <span class="hero-badge"><span class="dot-live"></span>Transmitiendo ahora</span>
+    <h1 class="hero-title"><span class="cima">CIMA</span><span class="fm">103.7 FM</span></h1>
+    <p class="hero-tag"><b>La Mundial.</b> Rompiendo la radio con el merengue, la bachata,
+      la salsa, el urbano y la música del ayer que mueven a Puerto Rico y República Dominicana.
+      24 horas. Sin filtros. Sin intermediarios.</p>
+    <div class="hero-genres">
+      <span class="chip">Merengue</span>
+      <span class="chip">Bachata</span>
+      <span class="chip">Salsa</span>
+      <span class="chip">Urbano</span>
+      <span class="chip">Música del ayer</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#vivo" class="btn btn-primary" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+        Escuchar en vivo
+      </a>
+      <a href="#anunciate" class="btn btn-ghost" data-magnetic>
+        Anúnciate con nosotros
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- LOGO 3D REAL — render Nano Banana (PNG/WebP sin fondo) + tilt + halo + orbit -->
+  <div class="logo-stage" id="logoStage" aria-hidden="true">
+    <div class="logo-scene" id="logoScene">
+      <div class="logo-halo"></div>
+      <div class="logo-orbit"></div>
+      <picture>
+        <source srcset="assets/logo-3d-cima.webp" type="image/webp">
+        <img class="logo-img" src="assets/logo-3d-cima.png" alt="" width="1400" height="1047" decoding="async" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+
+  <div class="hero-wave"></div>
+  <div class="scroll-cue">Explora</div>
+</section>
+
+<!-- ══════════ MARQUEE ══════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Rompiendo la radio</span><span>Salsa</span><span>Merengue</span><span>Bachata</span>
+    <span>La Mundial</span><span>Puerto Rico</span><span>República Dominicana</span>
+    <span>Rompiendo la radio</span><span>Salsa</span><span>Merengue</span><span>Bachata</span>
+    <span>La Mundial</span><span>Puerto Rico</span><span>República Dominicana</span>
+  </div>
+</div>
+
+<!-- ══════════ PLAYER ══════════ -->
+<section class="section" id="vivo">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Estudio Cima</span>
+      <h2 class="h2">Suena <em>ahora mismo</em></h2>
+      <p class="lede" style="margin-inline:auto">Sintoniza desde cualquier rincón del mundo. La Mundial nunca duerme.</p>
+    </div>
+
+    <div class="player-shell" id="playerShell" data-reveal>
+      <div class="player-art" aria-hidden="true"><span class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17.5V5.5l11-2.2v12.2"/><circle cx="6.5" cy="17.5" r="2.6"/><circle cx="17.5" cy="15.5" r="2.6"/></svg></span></div>
+      <div class="player-meta">
+        <span class="player-label"><span class="dot-live"></span>En vivo · Bayamón, PR</span>
+        <h3 class="player-show" id="npTitle">Transmisión en vivo</h3>
+        <p class="player-song" id="npSong">La Mundial Cadena Cima — la variedad que mueve la isla</p>
+        <canvas class="eq-canvas" id="eqCanvas" width="260" height="28" aria-hidden="true"></canvas>
+      </div>
+      <div class="player-actions">
+        <button class="btn-play" id="playBtn" aria-label="Reproducir transmisión en vivo">
+          <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+        </button>
+        <div class="player-vol">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 5 6.5 9H3.5v6h3L11 19V5z"/><path d="M15.5 9.5a3.5 3.5 0 0 1 0 5" opacity=".65"/></svg>
+          <input type="range" class="vol" id="volume" min="0" max="100" value="80" aria-label="Volumen">
+        </div>
+        <a class="btn-request" href="https://wa.me/17877871600?text=%C2%A1Hola%20La%20Mundial!%20Quiero%20pedir%20una%20canci%C3%B3n" target="_blank" rel="noopener" data-magnetic>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.94L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"/><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+          Pide tu canción
+        </a>
+      </div>
+    </div>
+
+    <div class="player-freq" data-reveal id="freqList"><!-- data-driven desde CIMA.frecuencias --></div>
+  </div>
+</section>
+
+<!-- ══════════ PROGRAMACIÓN ══════════ -->
+<section class="section" id="programacion" style="background:linear-gradient(180deg,transparent,rgba(42,17,80,.12) 30%,rgba(42,17,80,.12) 70%,transparent)">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">La guía</span>
+      <h2 class="h2">Programación que <em>no para</em></h2>
+      <p class="lede">La mayor variedad musical de Puerto Rico — tal como suena en La Mundial, 24/7.</p>
+    </div>
+
+    <div class="timeline" id="timeline" data-reveal><!-- renderizado desde data.js — solo datos reales --></div>
+
+    <div class="grid-note" data-reveal>
+      <p><b>Programas en vivo y parrilla completa</b>, directo con La Mundial. Sin intermediarios, como todo aquí.</p>
+      <a class="btn btn-ghost" href="https://wa.me/17877871600?text=%C2%A1Hola%20La%20Mundial!%20Quiero%20la%20parrilla%20de%20programaci%C3%B3n%20%F0%9F%93%BB" target="_blank" rel="noopener" data-magnetic>La quiero por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LA MUNDIAL ══════════ -->
+<section class="section" id="mundial">
+  <div class="container about-grid">
+    <div class="about-copy" data-reveal>
+      <span class="eyebrow">Nuestra historia</span>
+      <h2 class="h2">La Mundial <em>Cadena Cima</em></h2>
+      <p>
+        Nacimos en <b>2014</b> con una misión clara: ser la casa de la música tropical en Puerto Rico.
+        Hoy somos <b>ocho frecuencias</b> que cubren toda la isla, un stream que llega a donde llegue
+        la diáspora y una comunidad de <b>28 mil seguidores</b> que respira La Mundial en Facebook.
+      </p>
+      <p>
+        Somos el <b>puente entre San Juan y Santo Domingo</b>: la mitad de nuestra audiencia es boricua,
+        la mitad dominicana, y todos comparten el mismo ritmo. Merengue, bachata, salsa,
+        urbano y la música del ayer — la banda sonora de dos pueblos hermanos.
+      </p>
+      <div class="sig-line">
+        <b>Raphy Cabrera & Martín R. Bretón</b>
+        <span>Fundadores · RM Entertainment</span>
+      </div>
+    </div>
+    <div class="stats" data-reveal style="--d:.15s">
+      <div class="stat"><div class="stat-num" data-count="8">0</div><div class="stat-label">Frecuencias en PR</div></div>
+      <div class="stat"><div class="stat-num" data-count="12">0</div><div class="stat-label">Años de La Mundial</div></div>
+      <div class="stat"><div class="stat-num" data-count="24">0</div><div class="stat-label">Horas · 7 días</div></div>
+      <div class="stat"><div class="stat-num" data-count="2">0</div><div class="stat-label">Pueblos unidos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COBERTURA · UNA ISLA, OCHO SEÑALES ══════════ -->
+<section class="section" id="cobertura" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">La red</span>
+      <h2 class="h2">Una isla, <em>ocho señales</em></h2>
+      <p class="lede" style="margin-inline:auto">Ocho señales encendidas de costa a costa — la Mundial cubre toda la isla, 24 horas.</p>
+    </div>
+    <div class="map-stage" data-reveal>
+      <video class="cover-video" id="coverVideo" src="assets/cobertura-pr.mp4" autoplay muted loop playsinline preload="metadata" width="1920" height="1080" role="img" aria-label="Las ocho señales de La Mundial encendiéndose sobre una maqueta de Puerto Rico"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VOCES ══════════ -->
+<section class="section" id="voces">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">El roster</span>
+      <h2 class="h2">Las voces de <em>la Mundial</em></h2>
+    </div>
+    <div class="roster">
+      <article class="voice" data-tilt data-reveal>
+        <div class="voice-avatar">RC</div>
+        <h3>Raphy Cabrera</h3>
+        <span class="role">El Soberano</span>
+        <p>Dueño y alma de La Mundial. "El Soberano" recibe a los grandes artistas en cabina —del Conjunto Quisqueya para acá— y lleva a Cima desde sus inicios.</p>
+      </article>
+      <article class="voice" data-tilt data-reveal style="--d:.1s">
+        <div class="voice-avatar">MB</div>
+        <h3>Martín R. Bretón</h3>
+        <span class="role">Fundador & Voz</span>
+        <p>El estratega detrás de La Mundial. Conector incansable entre la comunidad dominicana y Puerto Rico.</p>
+      </article>
+      <article class="voice" data-tilt data-reveal style="--d:.2s">
+        <div class="voice-avatar">AP</div>
+        <h3>Alexandra Pérez</h3>
+        <span class="role">Conexión Semanal</span>
+        <p>Conductora de la revista que cada semana une a la comunidad dominicana de Puerto Rico, con un elenco de analistas, deportes y salud.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONEXIÓN RD ↔ PR ══════════ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">El puente</span>
+      <h2 class="h2">Dos pueblos, <em>un mismo ritmo</em></h2>
+    </div>
+    <div class="bridge" data-reveal>
+      <div class="bridge-side pr">
+        <div class="bridge-flag">🇵🇷</div>
+        <h3>Puerto Rico</h3>
+        <p>Salsa dura, clásicos de oro y la nueva ola. La audiencia boricua que lleva a Cima en el carro, la colmado y el trabajo.</p>
+      </div>
+      <div class="bridge-link" aria-hidden="true"><span class="pulse-dot"></span></div>
+      <div class="bridge-side rd">
+        <div class="bridge-flag">🇩🇴</div>
+        <h3>República Dominicana</h3>
+        <p>Merengue clásico, bachata que sana y la comunidad dominicana más activa de la diáspora. Aquí suenan en casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HISTORIAS — MEMORIA DE LA MUNDIAL ══════════ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Memoria</span>
+      <h2 class="h2">Historias de <em>La Mundial</em></h2>
+      <p class="lede" style="margin-inline:auto">El puente entre dos pueblos, contado con hechos — no con promesas.</p>
+    </div>
+    <div class="stories">
+      <article class="story" data-reveal>
+        <span class="story-num">01</span>
+        <span class="story-year">Feb 2023</span>
+        <h3>El Fiestón Tropical Pa'l Pueblo</h3>
+        <p>Nueve años de La Mundial se celebraron donde corresponde: en la calle. La Placita Barceló de Santurce bailó salsa, merengue y bachata con Raphy Cabrera y Martín Bretón agradeciendo al pueblo que los hizo grande.</p>
+        <div class="story-src">Fuente: Inter News Service</div>
+      </article>
+      <article class="story" data-reveal style="--d:.12s">
+        <span class="story-num">02</span>
+        <span class="story-year">Cuatro años al aire</span>
+        <h3>Conexión Semanal, la revista del puente</h3>
+        <p>Alexandra Pérez y su elenco dominicano —Elvin Santana, Jimmy Zorrilla, Carlos «Dichoso» Hernández, el Dr. Mario Paulino, Manny Cueto y Claudio Pérez— cumplieron cuatro años llevando actualidad, deportes y salud desde RD a los oyentes de Puerto Rico.</p>
+        <div class="story-src">Fuente: Apunto Noticias · Central de Noticias</div>
+      </article>
+      <article class="story" data-reveal style="--d:.24s">
+        <span class="story-num">03</span>
+        <span class="story-year">En cabina</span>
+        <h3>El Conjunto Quisqueya en La Mundial</h3>
+        <p>Una agrupación histórica del merengue dominicano cruzó el puente al revés: de Santo Domingo a la cabina de Bayamón. Los grandes no solo suenan en Cima — pasan por el estudio.</p>
+        <div class="story-src">Fuente: Instagram oficial @cima103</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ANÚNCIATE ══════════ -->
+<section class="section" id="anunciate" style="background:linear-gradient(180deg,transparent,rgba(42,17,80,.14) 40%,transparent)">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Plataforma de negocios</span>
+      <h2 class="h2">Directo con la radio, <em>sin intermediarios</em></h2>
+      <p class="lede" style="margin-inline:auto">Elige tu plan, sube tu contenido y aparece ante la audiencia tropical más leal del Caribe. Tu dashboard muestra todo, en tiempo real.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan" data-reveal>
+        <div class="plan-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11.5a7 7 0 0 0 14 0M12 18.5v3M9 21.5h6"/></svg></div>
+        <h3>Artista</h3>
+        <div class="plan-price"><sup>$</sup>600</div>
+        <p class="plan-period">paquete desde · por campaña</p>
+        <ul>
+          <li>Rotación 4× al día en horarios elite</li>
+          <li>Mención al aire por el locutor</li>
+          <li>Post en Instagram + Facebook</li>
+          <li>Story dedicado 24 horas</li>
+          <li>Reporte semanal de alcance</li>
+        </ul>
+        <a href="mailto:cima103.7fm@gmail.com?subject=Plan%20Artista%20—%20Cima%20103.7" class="btn btn-ghost" data-magnetic>Comenzar</a>
+      </article>
+
+      <article class="plan featured" data-reveal style="--d:.12s">
+        <span class="plan-flag">Más popular</span>
+        <div class="plan-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V7.5L5.2 4h13.6L20 7.5V10M5 10v10.5h14V10M10 20.5V15h4v5.5"/><path d="M4 10a2.2 2.2 0 0 0 4 0 2.2 2.2 0 0 0 4 0 2.2 2.2 0 0 0 4 0 2.2 2.2 0 0 0 4 0"/></svg></div>
+        <h3>Negocio</h3>
+        <div class="plan-price"><sup>$</sup>1,200</div>
+        <p class="plan-period">paquete desde · por campaña</p>
+        <ul>
+          <li>Cuña publicitaria 30″ ×6 diarias</li>
+          <li>Horario premium (6 AM–7 PM)</li>
+          <li>Post + Reel en Instagram</li>
+          <li>Mención en Facebook Live</li>
+          <li>Dashboard con métricas en vivo</li>
+          <li>Soporte WhatsApp prioritario</li>
+        </ul>
+        <a href="mailto:cima103.7fm@gmail.com?subject=Plan%20Negocio%20—%20Cima%20103.7" class="btn btn-primary" data-magnetic>Reservar pauta</a>
+      </article>
+
+      <article class="plan" data-reveal style="--d:.24s">
+        <div class="plan-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10.5h17"/></svg></div>
+        <h3>Evento</h3>
+        <div class="plan-price"><sup>$</sup>2,500</div>
+        <p class="plan-period">cobertura desde · a la medida</p>
+        <ul>
+          <li>Transmisión en vivo (FB + YT)</li>
+          <li>Promoción 2 semanas antes</li>
+          <li>10+ cuñas diarias</li>
+          <li>Entrevista a los organizadores</li>
+          <li>Reporte post-evento completo</li>
+        </ul>
+        <a href="mailto:cima103.7fm@gmail.com?subject=Plan%20Evento%20—%20Cima%20103.7" class="btn btn-ghost" data-magnetic>Cotizar evento</a>
+      </article>
+    </div>
+
+    <div class="direct-line" data-reveal>
+      <p><b>Sin formularios eternos, sin agencias.</b> Llama, escribe o pasa por Bayamón.
+      Con Raphy o Martín directo: decides hoy, suenas mañana.</p>
+      <div class="direct-contact">
+        <a href="tel:+1-787-787-1600" class="btn btn-ghost">📞 787-787-1600</a>
+        <a href="mailto:cima103.7fm@gmail.com" class="btn btn-primary" data-magnetic>Hablar con ventas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section class="section" id="contacto" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Estamos pa' ti</span>
+      <h2 class="h2">Contacto <em>directo</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card" data-reveal>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h3l1.7 4.3-2.2 1.6a12.5 12.5 0 0 0 5.1 5.1l1.6-2.2L20 13.5v3a2.5 2.5 0 0 1-2.7 2.5C9.6 18.4 5.6 14.4 4 6.7A2.5 2.5 0 0 1 6.5 3z"/></svg></div>
+        <h4>Teléfono</h4>
+        <a href="tel:+1-787-787-1600">787-787-1600</a>
+      </div>
+      <div class="contact-card" data-reveal style="--d:.1s">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg></div>
+        <h4>Email</h4>
+        <a href="mailto:cima103.7fm@gmail.com">cima103.7fm@gmail.com</a>
+      </div>
+      <div class="contact-card" data-reveal style="--d:.2s">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 10a7 7 0 0 1 14 0c0 5-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <h4>Estudio</h4>
+        <p>Bayamón, Puerto Rico</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="nav-mark">103</div>
+        <div class="nav-word"><b>CIMA</b><span>LA MUNDIAL</span></div>
+      </div>
+      <div class="social">
+        <a href="https://www.facebook.com/cima103fm/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cima103/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.8" cy="6.2" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/user/martinbreton" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.85-.49-5.55a2.78 2.78 0 0 0-1.95-2C18.86 4 12 4 12 4s-6.86 0-8.56.45a2.78 2.78 0 0 0-1.95 2C1 8.15 1 12 1 12s0 3.85.49 5.55a2.78 2.78 0 0 0 1.95 2C5.14 20 12 20 12 20s6.86 0 8.56-.45a2.78 2.78 0 0 0 1.95-2C23 15.85 23 12 23 12zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+        <a href="https://wa.me/17877871600" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.89 1.22 3.09.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.94L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Cima 103.7 FM — La Mundial Cadena Cima · RM Entertainment, Inc.</span>
+      <span>WCMA 1600 AM · W279BU 103.7 · W241DE 96.1 · Bayamón, PR</span>
+      <span>Identidad digital: <b style="color:var(--gold)">Nanoboy × 365 Collaboration</b></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast + FAB -->
+<div class="toast" id="toast" role="status"></div>
+<a href="#vivo" class="fab-listen" id="fabListen">▶ Escuchar</a>
+
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   CIMA 103.7 · Runtime v2
+   ============================================================ */
+(() => {
+  "use strict";
+  const $  = (s, c=document) => c.querySelector(s);
+  const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Scroll progress + nav state ---------- */
+  const progress = $("#progress"), nav = $("#nav");
+  const onScroll = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progress.style.width = (p * 100).toFixed(2) + "%";
+    nav.classList.toggle("scrolled", h.scrollTop > 24);
+  };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---------- Scrollspy ---------- */
+  const links = $$(".nav-menu a");
+  const sections = links.map(a => $(a.hash)).filter(Boolean);
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.toggle("active", a.hash === "#" + e.target.id));
+    });
+  }, {rootMargin:"-40% 0px -55% 0px"});
+  sections.forEach(s => spy.observe(s));
+
+  /* ---------- Mobile menu ---------- */
+  const burger = $("#burger");
+  burger.addEventListener("click", () => {
+    const open = nav.classList.toggle("nav-open");
+    document.body.style.overflow = open ? "hidden" : "";
+    if (open){ const first = $(".nav-menu a"); if (first) first.focus(); }
+  });
+  $$(".nav-menu a").forEach(a => a.addEventListener("click", () => {
+    nav.classList.remove("nav-open"); document.body.style.overflow = "";
+  }));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && nav.classList.contains("nav-open")){
+      nav.classList.remove("nav-open"); document.body.style.overflow = ""; burger.focus();
+    }
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -8% 0px"});
+  $$("[data-reveal]").forEach(el => io.observe(el));
+
+  /* ---------- Count-up stats ---------- */
+  const counters = $$("[data-count]");
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const end = +e.target.dataset.count, t0 = performance.now(), dur = 1400;
+      const tick = t => {
+        const p = Math.min((t - t0) / dur, 1);
+        e.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); // easeOutCubic
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      reduced ? e.target.textContent = end : requestAnimationFrame(tick);
+    });
+  }, {threshold:.6});
+  counters.forEach(c => cio.observe(c));
+
+  /* ---------- Logo tilt ---------- */
+  const stage = $("#logoStage"), scene = $("#logoScene");
+  if (stage && scene && !reduced && matchMedia("(pointer:fine)").matches){
+    let raf = null;
+    stage.addEventListener("pointermove", e => {
+      const r = stage.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        scene.style.transition = "transform .08s linear";
+        scene.style.transform =
+          `rotateY(${((x - .5) * 12).toFixed(2)}deg) rotateX(${((.5 - y) * 9).toFixed(2)}deg)`;
+      });
+    });
+    stage.addEventListener("pointerleave", () => {
+      scene.style.transition = "transform .9s cubic-bezier(.34,1.56,.64,1)";
+      scene.style.transform = "rotateY(0deg) rotateX(0deg)";
+    });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  if (matchMedia("(pointer:fine)").matches && !reduced){
+    $$("[data-magnetic]").forEach(btn => {
+      btn.addEventListener("pointermove", e => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width/2, y = e.clientY - r.top - r.height/2;
+        btn.style.transform = `translate(${(x*.18).toFixed(1)}px,${(y*.28).toFixed(1)}px)`;
+      });
+      btn.addEventListener("pointerleave", () => { btn.style.transform = ""; });
+    });
+  }
+
+  /* ---------- LA SEÑAL · audio de estudio (sintetizado, 0 assets) ---------- */
+  const Senal = (() => {
+    let ctx = null, master = null;
+    let muted = localStorage.getItem("cima-mute") === "1";
+    const ensure = () => {
+      if (muted) return null;
+      if (!ctx){
+        try{
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return null;
+          ctx = new AC();
+          master = ctx.createGain();
+          master.gain.value = .16;
+          master.connect(ctx.destination);
+        }catch{ return null; }
+      }
+      if (ctx.state === "suspended") ctx.resume();
+      return ctx;
+    };
+    const blip = (f, dur, type, vol, slide) => {
+      const c = ensure(); if (!c) return;
+      const o = c.createOscillator(), g = c.createGain();
+      o.type = type;
+      o.frequency.setValueAtTime(f, c.currentTime);
+      if (slide) o.frequency.exponentialRampToValueAtTime(f + slide, c.currentTime + dur);
+      g.gain.setValueAtTime(vol, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(.0001, c.currentTime + dur);
+      o.connect(g).connect(master);
+      o.start(); o.stop(c.currentTime + dur + .03);
+    };
+    const noise = (dur, vol, hp) => { // ráfaga de estática (encendido de radio)
+      const c = ensure(); if (!c) return;
+      const n = Math.floor(c.sampleRate * dur);
+      const buf = c.createBuffer(1, n, c.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n);
+      const s = c.createBufferSource(); s.buffer = buf;
+      const fil = c.createBiquadFilter(); fil.type = "highpass"; fil.frequency.value = hp;
+      const g = c.createGain(); g.gain.value = vol;
+      s.connect(fil).connect(g).connect(master);
+      s.start();
+    };
+    return {
+      power(){ noise(.14, .5, 1400); blip(240, .22, "sine", .8, 700); },
+      tick(){ blip(2300, .04, "square", .14); },
+      confirm(){ blip(660, .09, "sine", .45); setTimeout(() => blip(990, .12, "sine", .45), 80); },
+      toggle(){ muted = !muted; localStorage.setItem("cima-mute", muted ? "1" : "0"); return muted; },
+      get muted(){ return muted; }
+    };
+  })();
+
+  /* toggle de silencio */
+  const muteBtn = $("#muteBtn");
+  const paintMute = () => {
+    document.body.classList.toggle("muted", Senal.muted);
+    muteBtn.setAttribute("aria-pressed", String(Senal.muted));
+    muteBtn.setAttribute("aria-label", Senal.muted ? "Activar efectos de sonido" : "Silenciar efectos de sonido");
+  };
+  muteBtn.addEventListener("click", () => { const m = Senal.toggle(); paintMute(); if (!m) Senal.tick(); });
+  paintMute();
+
+  /* tick de sintonía en chips, tabs y frecuencias + confirmación en botones */
+  const sigTick = el => { el.classList.remove("sig-tick-on"); void el.offsetWidth; el.classList.add("sig-tick-on"); };
+  $$(".chip, .day-tab, .freq-pill").forEach(el => el.addEventListener("click", () => { sigTick(el); Senal.tick(); }));
+  $$(".btn, .btn-request").forEach(b => b.addEventListener("click", () => { if (b.id !== "playBtn") Senal.confirm(); }));
+
+  /* ---------- Voice cards: spotlight + tilt ---------- */
+  $$("[data-tilt]").forEach(card => {
+    card.addEventListener("pointermove", e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      card.style.setProperty("--mx", (x*100) + "%");
+      card.style.setProperty("--my", (y*100) + "%");
+      if (!reduced) card.style.transform =
+        `perspective(900px) rotateY(${((x-.5)*10).toFixed(2)}deg) rotateX(${((.5-y)*8).toFixed(2)}deg) translateY(-4px)`;
+    });
+    card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+  });
+
+  /* ---------- Player ---------- */
+  const shell = $("#playerShell"), playBtn = $("#playBtn"), volume = $("#volume");
+  const npTitle = $("#npTitle"), npSong = $("#npSong");
+  const STREAM_HLS = "https://stream.eleden.com/rcima.aac/rcima.aac.stream/playlist.m3u8";
+  const STREAM_AAC = "https://stream.eleden.com/rcima.aac/rcima.aac.stream";
+  const META_URL   = "https://stream.eleden.com/status-json.xsl";
+  let audio = null, toastTimer = null, hls = null, metaTimer = null;
+
+  const toast = msg => {
+    const t = $("#toast");
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("show"), 4200);
+  };
+
+  const loadScript = src => new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = src; s.onload = res; s.onerror = rej;
+    document.head.appendChild(s);
+  });
+
+  const tryNative = () => { // último recurso: AAC directo, sin hls.js
+    if (hls){ hls.destroy(); hls = null; }
+    try{
+      audio = new Audio();
+      audio.src = STREAM_AAC;
+      audio.volume = volume.value / 100;
+      const p = audio.play();
+      if (p) p.catch(() => toast("🎧 El stream no respondió — reintenta o escríbenos por WhatsApp"));
+    }catch{ toast("🎧 El stream no respondió — reintenta en unos segundos"); }
+  };
+
+  const startAudio = async () => {
+    try{
+      audio = new Audio();
+      audio.volume = volume.value / 100;
+      if (window.Hls && window.Hls.isSupported()){              // Chrome/Firefox: hls.js
+        hls = new window.Hls({ enableWorker: true });
+        hls.loadSource(STREAM_HLS);
+        hls.attachMedia(audio);
+        hls.on(window.Hls.Events.ERROR, (_, data) => {
+          if (data.fatal) tryNative();
+        });
+      } else if (audio.canPlayType("application/vnd.apple.mpegurl")){ // Safari/iOS: HLS nativo
+        audio.src = STREAM_HLS;
+      } else {
+        audio.src = STREAM_AAC;                                 // AAC directo
+      }
+      const p = audio.play();
+      if (p) p.catch(() => tryNative());
+    }catch{ tryNative(); }
+  };
+
+  const ensureHls = async () => { // hls.js se descarga solo al primer play
+    if (window.Hls) return;
+    try{ await loadScript("https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"); }catch{}
+  };
+
+  /* Metadata Icecast: intenta status-json; si CORS lo bloquea, queda el label honesto */
+  const pullMeta = async () => {
+    try{
+      const r = await fetch(META_URL, { cache: "no-store" });
+      if (!r.ok) return;
+      const j = await r.json();
+      let src = j && j.icestats && j.icestats.source;
+      const list = Array.isArray(src) ? src : (src ? [src] : []);
+      const mine = list.find(s => String(s.mount || s.server_name || "").includes("rcima")) || list[0];
+      if (mine && mine.title){
+        const t = String(mine.title);
+        npSong.textContent = t;
+        npTitle.textContent = (t.split(" - ")[0] || "Al aire").slice(0, 60);
+      }
+    }catch{ /* CORS u offline: silencioso — queda "Transmisión en vivo" */ }
+  };
+  const startMeta = () => { pullMeta(); clearInterval(metaTimer); metaTimer = setInterval(pullMeta, 20000); };
+  const stopMeta = () => clearInterval(metaTimer);
+
+  /* Visualizador orgánico (canvas) — respira en reposo, baila al aire */
+  const eqC = $("#eqCanvas"), eqX = eqC.getContext("2d");
+  const BARS = 18;
+  let eqT = 0;
+  const drawEq = () => {
+    eqT += .045;
+    const w = eqC.width, h = eqC.height;
+    eqX.clearRect(0, 0, w, h);
+    const live = shell.classList.contains("playing");
+    const beat = Math.pow(.5 + .5 * Math.sin(eqT * 2.4), 3);
+    for (let i = 0; i < BARS; i++){
+      const env = 1 - Math.abs(i - BARS / 2) / (BARS / 2) * .5;
+      const v = live
+        ? (.3 + .7 * (.5 + .5 * Math.sin(eqT * 3 + i * .55))) * env * (.75 + .25 * beat)
+        : .12 + .04 * Math.sin(eqT + i);
+      const bh = Math.max(2, v * h);
+      const bw = w / BARS - 3;
+      const grd = eqX.createLinearGradient(0, h - bh, 0, h);
+      grd.addColorStop(0, "#FFC24B");
+      grd.addColorStop(1, "rgba(232,72,85,.55)");
+      eqX.fillStyle = grd;
+      eqX.beginPath();
+      eqX.roundRect(i * (w / BARS) + 1.5, h - bh, bw, bh, 2);
+      eqX.fill();
+    }
+    requestAnimationFrame(drawEq);
+  };
+  drawEq();
+
+  playBtn.addEventListener("click", () => {
+    const was = shell.classList.contains("playing");
+    const on = shell.classList.toggle("playing");
+    if (!was) Senal.power();
+    document.body.classList.toggle("playing", on);
+    if (on){
+      if (!audio){ ensureHls().then(startAudio); startMeta(); }
+      else { const p = audio.play(); if (p) p.catch(()=>{}); }
+      toast("🔴 EN VIVO — Cima 103.7 La Mundial");
+    } else if (audio){ audio.pause(); stopMeta(); }
+  });
+
+  const syncVol = () => volume.style.setProperty("--fill", volume.value + "%");
+  volume.addEventListener("input", () => { syncVol(); if (audio) audio.volume = volume.value/100; });
+  syncVol();
+
+  /* ---------- Programación desde data.js (solo datos reales) ---------- */
+  const timeline = $("#timeline");
+  const cardHTML = it => `
+      <article class="show-card">
+        <div class="show-time">${it.cuando[0]}<small>${it.cuando[1]}</small></div>
+        <div><div class="show-name">${it.nombre}</div><div class="show-host">${it.host}</div></div>
+        <span class="show-tag ${it.tagClass}">${it.tag}</span>
+      </article>`;
+  const items = [{
+    cuando: ["24/7", "SIEMPRE"],
+    nombre: CIMA.transmisionContinua.nombre,
+    host: CIMA.transmisionContinua.descripcion,
+    tag: "Siempre al aire", tagClass: "live"
+  }];
+  CIMA.shows.forEach(s => {
+    const p = s.horario.split(" ");
+    items.push({
+      cuando: p.length > 2 ? [p[0], p.slice(1).join(" ")] : [s.horario, ""],
+      nombre: s.nombre,
+      host: `Con ${s.conductora} y su elenco — ${s.descripcion}`,
+      tag: "Programa estrella", tagClass: "next"
+    });
+  });
+  timeline.innerHTML = items.map(cardHTML).join("");
+
+  /* ---------- Frecuencias desde data.js (modelo único, cero duplicados) ---------- */
+  $("#freqList").innerHTML = CIMA.frecuencias.map(f =>
+    `<span class="freq-pill"><b>${f.f}</b> ${f.banda} · ${f.ciudad}</span>`).join("");
+
+  /* ---------- Contacto desde data.js (un solo origen de verdad) ---------- */
+  $$('a[href^="tel:"]').forEach(a => { a.href = "tel:" + CIMA.contacto.tel; });
+  $$('a[href^="mailto:"]').forEach(a => { a.href = "mailto:" + CIMA.contacto.email; });
+  $$('a[href^="https://wa.me/"]').forEach(a => {
+    a.href = a.href.replace("wa.me/17877871600", "wa.me/" + CIMA.contacto.whatsapp);
+  });
+
+  /* ---------- Video de cobertura (muteado, loop) ---------- */
+  const coverVideo = $("#coverVideo");
+  if (coverVideo){
+    coverVideo.muted = true; // sin audio, como debe ser
+    const pv = coverVideo.play();
+    if (pv) pv.catch(()=>{});
+    coverVideo.addEventListener("error", () => { // estado de marca si el video falla
+      const stage = coverVideo.closest(".map-stage");
+      if (stage) stage.classList.add("video-fallback");
+    });
+  }
+
+  /* ---------- Estados de marca: conexión ---------- */
+  addEventListener("offline", () => toast("📴 Sin conexión — La Mundial vuelve en seguida"));
+  addEventListener("online", () => toast("📡 Conexión restaurada — 24/7 contigo"));
+})();
+</script>
+</body>
+</html>
