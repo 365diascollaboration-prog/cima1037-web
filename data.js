@@ -35,7 +35,7 @@ const CIMA = {
   shows: [
     {
       nombre: "Conexión Semanal",
-      horario: "Sáb 9–11 AM",
+      horario: "Sáb 9 a 11 AM",
       dias: [6],
       conductora: "Alexandra Pérez",
       cast: [
@@ -54,7 +54,7 @@ const CIMA = {
 
   transmisionContinua: {
     nombre: "La Mundial 24/7",
-    descripcion: "Variedad tropical sin parar — merengue, bachata, salsa, urbano y la música del ayer.",
+    descripcion: "Variedad tropical sin parar: merengue, bachata, salsa, urbano y la música del ayer.",
     fuente: "Página oficial: 'Siempre abierto' · IG: 'la mayor variedad musical en Puerto Rico'"
   }
 };
