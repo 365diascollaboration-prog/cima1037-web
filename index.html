@@ -1268,11 +1268,15 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
 
 <script>
 (function(){
-  /* Reveal al scroll */
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
-  },{threshold:.1});
-  document.querySelectorAll("#pitch-check-365 .pitch365-reveal").forEach(function(el){ io.observe(el); });
+  /* Reveal al scroll (con guarda para webviews viejos) */
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{threshold:.1});
+    document.querySelectorAll("#pitch-check-365 .pitch365-reveal").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll("#pitch-check-365 .pitch365-reveal").forEach(function(el){ el.classList.add("in"); });
+  }
 
   /* Fallback mailto */
   var b = document.getElementById("btnMailto365");
