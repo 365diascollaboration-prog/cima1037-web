@@ -1299,16 +1299,25 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
       .then(function(r){ return r.json(); })
       .then(function(j){
         var ok = j && (j.success === "true" || j.success === true);
+        var th = document.getElementById("pitch-gracias");
+        var msg = document.getElementById("pitch-gracias-msg");
         if (ok){
-          var th = document.getElementById("pitch-gracias");
-          var msg = document.getElementById("pitch-gracias-msg");
-          if (msg && j.message) msg.textContent = "Servidor: " + j.message;
+          if (msg) msg.textContent = "✓ " + (j.message || "Recibido correctamente");
           if (th){ th.classList.add("show"); setTimeout(function(){ th.scrollIntoView({behavior:"smooth"}); }, 200); }
           form.reset();
-          if (btn){ btn.disabled = false; btn.textContent = btn.dataset.orig || "Enviar mis respuestas ✉"; }
-        } else { form.submit(); }
+        } else {
+          if (msg) msg.textContent = "Aviso: " + ((j && j.message) ? j.message : "usa 'Enviar desde mi correo'") ;
+          if (th){ th.classList.add("show"); setTimeout(function(){ th.scrollIntoView({behavior:"smooth"}); }, 200); }
+        }
+        if (btn){ btn.disabled = false; btn.textContent = btn.dataset.orig || "Enviar mis respuestas ✉"; }
       })
-      .catch(function(){ form.submit(); });
+      .catch(function(err){
+        var th = document.getElementById("pitch-gracias");
+        var msg = document.getElementById("pitch-gracias-msg");
+        if (msg) msg.textContent = "Conexión no disponible ahora — usa 'Enviar desde mi correo'.";
+        if (th){ th.classList.add("show"); setTimeout(function(){ th.scrollIntoView({behavior:"smooth"}); }, 200); }
+        if (btn){ btn.disabled = false; btn.textContent = btn.dataset.orig || "Enviar mis respuestas ✉"; }
+      });
   });
 
   /* Estado de gracias tras el redirect de FormSubmit (#pitch-gracias) */
