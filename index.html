@@ -6,6 +6,11 @@
 <title>Cima 103.7 FM: La Mundial · Salsa, Merengue y Bachata 24/7</title>
 <meta name="description" content="La Mundial Cadena Cima 103.7 FM. La radio tropical de Puerto Rico: merengue, bachata, salsa, urbano y la música del ayer, las 24 horas. El puente musical entre Puerto Rico y República Dominicana.">
 <meta name="theme-color" content="#0A0714">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cima 103.7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cima 103.7 FM: La Mundial">
 <meta property="og:description" content="Rompiendo la radio. Música tropical 24/7 desde Bayamón, Puerto Rico para el mundo.">
@@ -1694,6 +1699,13 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
   addEventListener("offline", () => toast("📴 Sin conexión — La Mundial vuelve en seguida"));
   addEventListener("online", () => toast("📡 Conexión restaurada — 24/7 contigo"));
 })();
+
+/* ══════════ PWA · Registro del Service Worker (instalable, cero impacto visual) ══════════ */
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js", { scope: "./" }).catch(() => {});
+  });
+}
 </script>
 </body>
 </html>
