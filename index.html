@@ -1261,7 +1261,7 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
     <p class="pitch365-priv">Sus respuestas solo se usan para afinar esta propuesta con 365 Collaboration LLC. Sin spam, sin listas.</p>
   </form>
 
-  <div class="pitch365-thanks" id="pitch-gracias">✅ ¡Recibido! Gracias, señor Bretón — le respondemos en 24–48 horas.<br><span style="color:var(--gray);font-size:13px">365 Collaboration LLC · 365diascollaboration@gmail.com</span></div>
+  <div class="pitch365-thanks" id="pitch-gracias">✅ ¡Recibido! Gracias, señor Bretón — le respondemos en 24–48 horas.<br><span id="pitch-gracias-msg" style="color:var(--gray);font-size:13px"></span><span style="color:var(--gray);font-size:13px">365 Collaboration LLC · 365diascollaboration@gmail.com</span></div>
 
   <p class="pitch365-foot"><b>365 Collaboration LLC</b> · nanoboypr.com · 365diascollaboration@gmail.com — Hecho con verdad y precisión · PR–RD 2026</p>
 </div>
@@ -1287,6 +1287,28 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
     location.href = "mailto:365diascollaboration@gmail.com?subject=" +
       encodeURIComponent("Pitch Check · CIMA 103.7 · " + (g("nombre")||"365 Collaboration")) +
       "&body=" + encodeURIComponent(body);
+  });
+
+  /* Envío AJAX (FormSubmit): sin redirección, confirmación inline */
+  var form = document.getElementById("pitchForm365");
+  if (form) form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    if (btn){ btn.disabled = true; btn.dataset.orig = btn.textContent; btn.textContent = "Enviando… ⏳"; }
+    fetch(form.action, { method:"POST", body:new FormData(form), headers:{ "Accept":"application/json" } })
+      .then(function(r){ return r.json(); })
+      .then(function(j){
+        var ok = j && (j.success === "true" || j.success === true);
+        if (ok){
+          var th = document.getElementById("pitch-gracias");
+          var msg = document.getElementById("pitch-gracias-msg");
+          if (msg && j.message) msg.textContent = "Servidor: " + j.message;
+          if (th){ th.classList.add("show"); setTimeout(function(){ th.scrollIntoView({behavior:"smooth"}); }, 200); }
+          form.reset();
+          if (btn){ btn.disabled = false; btn.textContent = btn.dataset.orig || "Enviar mis respuestas ✉"; }
+        } else { form.submit(); }
+      })
+      .catch(function(){ form.submit(); });
   });
 
   /* Estado de gracias tras el redirect de FormSubmit (#pitch-gracias) */
