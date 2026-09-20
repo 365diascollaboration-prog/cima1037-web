@@ -1132,6 +1132,173 @@ footer{padding:56px 0 40px;border-top:1px solid var(--line-soft);margin-top:var(
   </div>
 </footer>
 
+<!-- ═══════════════ 365-PITCH-START · Pitch Check temporal (quitar tras respuesta de Martín: borrar este bloque y re-push) ═══════════════ -->
+<section id="pitch-check-365" aria-labelledby="pitch365-title">
+<style>
+  #pitch-check-365{padding:clamp(56px,8vw,110px) clamp(18px,5vw,48px);position:relative;overflow:hidden;
+    background:radial-gradient(900px 500px at 85% -10%,rgba(245,166,35,.14),transparent 60%),
+    radial-gradient(800px 480px at -10% 30%,rgba(42,17,80,.5),transparent 62%),
+    linear-gradient(180deg,transparent,rgba(10,7,20,.6) 20%,rgba(10,7,20,.6) 85%,transparent)}
+  #pitch-check-365 .pitch365-wrap{max-width:980px;margin:0 auto}
+  #pitch-check-365 .pitch365-conf{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+    font:600 11px/1.4 var(--f-head);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(24px,4vw,40px);text-align:center}
+  #pitch-check-365 .pitch365-conf span{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
+    background:rgba(245,166,35,.07);border:1px solid var(--line)}
+  #pitch-check-365 .pitch365-intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:clamp(28px,4vw,44px)}
+  #pitch-check-365 .pitch365-tile{padding:clamp(20px,3vw,28px);border-radius:22px;
+    background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.028));
+    border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.09)}
+  #pitch-check-365 .pitch365-tile b{display:block;font:700 12px/1 var(--f-head);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  #pitch-check-365 .pitch365-tile p{font:500 14.5px/1.65 var(--f-body);color:var(--cream);margin:0}
+  #pitch-check-365 h2#pitch365-title{font-family:var(--f-display);font-weight:900;font-size:clamp(26px,4vw,40px);
+    line-height:1.12;letter-spacing:-.015em;text-wrap:balance;margin:0 0 10px}
+  #pitch-check-365 .pitch365-lede{font-size:clamp(15px,2vw,17.5px);color:var(--cream);max-width:64ch;margin:0 0 24px}
+  #pitch-check-365 .pitch365-field{margin-bottom:14px}
+  #pitch-check-365 .pitch365-field label{display:block;font:600 12px/1 var(--f-head);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-hot);margin-bottom:7px}
+  #pitch-check-365 .pitch365-field input[type=text],#pitch-check-365 .pitch365-field input[type=email]{
+    width:100%;padding:14px 17px;border-radius:15px;color:var(--cream);
+    background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);
+    font:500 15px/1.4 var(--f-body);outline:none;transition:border-color .3s,box-shadow .3s}
+  #pitch-check-365 .pitch365-field input:focus{border-color:rgba(245,166,35,.55);box-shadow:0 0 0 4px rgba(245,166,35,.12);background:rgba(255,255,255,.08)}
+  #pitch-check-365 .pitch365-field input::placeholder,#pitch-check-365 .pitch365-q textarea::placeholder{color:rgba(255,248,240,.38)}
+  #pitch-check-365 .pitch365-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){#pitch-check-365 .pitch365-grid2{grid-template-columns:1fr}}
+  #pitch-check-365 .pitch365-q{border-radius:17px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);margin-bottom:9px;overflow:hidden;transition:background .3s,border-color .3s}
+  #pitch-check-365 .pitch365-q:hover{background:rgba(255,255,255,.055)}
+  #pitch-check-365 .pitch365-q[open]{background:rgba(245,166,35,.055);border-color:rgba(245,166,35,.28)}
+  #pitch-check-365 .pitch365-q summary{list-style:none;cursor:pointer;padding:15px 18px;font:600 14.5px/1.45 var(--f-head);color:var(--cream);display:flex;align-items:flex-start;gap:13px}
+  #pitch-check-365 .pitch365-q summary::-webkit-details-marker{display:none}
+  #pitch-check-365 .pitch365-q .pitch365-qn{flex:0 0 26px;height:26px;border-radius:8px;display:grid;place-items:center;margin-top:1px;background:rgba(245,166,35,.12);border:1px solid var(--line);color:var(--gold-hot);font:700 12.5px/1 var(--f-head)}
+  #pitch-check-365 .pitch365-q .pitch365-chev{margin-left:auto;flex:0 0 auto;color:var(--gray);font-size:13px;transition:transform .35s var(--ease-out)}
+  #pitch-check-365 .pitch365-q[open] .pitch365-chev{transform:rotate(180deg);color:var(--gold)}
+  #pitch-check-365 .pitch365-qa{padding:2px 18px 18px 57px}
+  @media(max-width:640px){#pitch-check-365 .pitch365-qa{padding-left:18px}}
+  #pitch-check-365 .pitch365-q textarea{width:100%;min-height:88px;resize:vertical;padding:13px 15px;border-radius:13px;color:var(--cream);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);font:500 15px/1.5 var(--f-body);outline:none;transition:border-color .3s,box-shadow .3s}
+  #pitch-check-365 .pitch365-q textarea:focus{border-color:rgba(245,166,35,.55);box-shadow:0 0 0 4px rgba(245,166,35,.12)}
+  #pitch-check-365 .pitch365-reunion{display:flex;gap:12px;align-items:center;cursor:pointer;padding:15px 19px;border-radius:15px;margin:18px 0;background:rgba(245,166,35,.07);border:1px solid var(--line);font:600 14.5px/1.4 var(--f-head)}
+  #pitch-check-365 .pitch365-reunion input{accent-color:var(--gold);width:19px;height:19px}
+  #pitch-check-365 .pitch365-send{display:flex;gap:13px;flex-wrap:wrap;margin-top:6px}
+  #pitch-check-365 .pitch365-btn{display:inline-flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;
+    padding:14px 26px;border-radius:999px;font:600 14.5px/1 var(--f-head);color:var(--void);
+    background:linear-gradient(100deg,var(--gold-hot),var(--gold));border:none;
+    box-shadow:0 8px 30px rgba(245,166,35,.3),0 2px 8px rgba(245,166,35,.18);
+    transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out);position:relative;overflow:hidden}
+  #pitch-check-365 .pitch365-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(245,166,35,.42)}
+  #pitch-check-365 .pitch365-btn::after{content:"";position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:p365sheen 4.5s var(--ease-out) infinite}
+  @keyframes p365sheen{0%{left:-80%}46%,100%{left:130%}}
+  #pitch-check-365 .pitch365-btn.ghost{background:rgba(255,255,255,.06);color:var(--cream);border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 26px rgba(0,0,0,.35)}
+  @media (prefers-reduced-motion: reduce){#pitch-check-365 .pitch365-btn::after{animation:none}}
+  #pitch-check-365 .pitch365-priv{font-size:12.5px;color:var(--gray);margin-top:14px}
+  #pitch-check-365 .pitch365-thanks{display:none;margin-top:20px;padding:20px 22px;border-radius:17px;text-align:center;background:rgba(48,180,120,.10);border:1px solid rgba(48,180,120,.35);font:600 15.5px/1.5 var(--f-head)}
+  #pitch-check-365 .pitch365-thanks.show{display:block}
+  #pitch-check-365 .pitch365-foot{text-align:center;margin-top:clamp(26px,4vw,40px);color:var(--gray);font:500 13.5px/1.7 var(--f-body)}
+  #pitch-check-365 .pitch365-foot b{color:var(--gold-hot)}
+  #pitch-check-365 .pitch365-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+  #pitch-check-365 .pitch365-reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){#pitch-check-365 .pitch365-reveal{opacity:1;transform:none;transition:none}}
+</style>
+
+<div class="pitch365-wrap">
+  <div class="pitch365-conf pitch365-reveal">
+    <span>◈ Confidencial · Preparada para Martín R. Bretón · RM Entertainment</span>
+    <span>365 Collaboration × CIMA 103.7</span>
+  </div>
+
+  <div class="pitch365-intro">
+    <div class="pitch365-tile pitch365-reveal">
+      <b>Quiénes somos</b>
+      <p>365 Collaboration LLC — estudio digital PR–RD: web de élite, video e IA aplicada. <em>No le pedimos la radio: le construimos la casa digital que se ganó.</em></p>
+    </div>
+    <div class="pitch365-tile pitch365-reveal">
+      <b>Su web ya está viva</b>
+      <p>Esta página es la prueba: su señal real en el player, "Pide tu canción" por WhatsApp, datos verificados y tarifas de pauta integradas. La propuesta completa llega en la reunión.</p>
+    </div>
+    <div class="pitch365-tile pitch365-reveal">
+      <b>Sello de la casa</b>
+      <p><em>Prueba de Verdad:</em> cada dato con fuente — expediente FCC, Facebook oficial verificado (28K), prensa RD–PR. Cero inventado, como su radio.</p>
+    </div>
+  </div>
+
+  <div class="pitch365-reveal">
+    <h2 id="pitch365-title">Pitch Check — <span style="background:linear-gradient(100deg,var(--gold-hot),var(--gold),var(--cream));-webkit-background-clip:text;background-clip:text;color:transparent">14 preguntas, su voz</span></h2>
+    <p class="pitch365-lede">Contestar es opcional en todo — pero cada respuesta afina la propuesta. Sus respuestas llegan directo a <b style="color:var(--gold-hot)">365diascollaboration@gmail.com</b>.</p>
+  </div>
+
+  <form id="pitchForm365" class="pitch365-reveal" action="https://formsubmit.co/365diascollaboration@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="🎤 Pitch Check · CIMA 103.7 · 365 Collaboration">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://365diascollaboration-prog.github.io/cima1037-web/#pitch-gracias">
+
+    <div class="pitch365-grid2">
+      <div class="pitch365-field"><label for="pf-nombre">Nombre *</label><input type="text" id="pf-nombre" name="nombre" required placeholder="Su nombre"></div>
+      <div class="pitch365-field"><label for="pf-email">Correo de respuesta *</label><input type="email" id="pf-email" name="email" required placeholder="nombre@empresa.com"></div>
+      <div class="pitch365-field"><label for="pf-cargo">Cargo / empresa</label><input type="text" id="pf-cargo" name="cargo" placeholder="Ej: RM Entertainment"></div>
+      <div class="pitch365-field"><label for="pf-wa">Teléfono / WhatsApp</label><input type="text" id="pf-wa" name="whatsapp" placeholder="(787) 000-0000"></div>
+    </div>
+
+    <details class="pitch365-q"><summary><span class="pitch365-qn">1</span>¿Cómo está organizada hoy la propiedad y la operación de Cima? ¿Qué entidad firma contratos y pautas?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p1" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">2</span>¿Cuál es la parrilla oficial de lunes a domingo con horarios? ¿Qué programas son de la casa y cuáles son espacios de terceros?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p2" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">3</span>¿Quiénes son los rostros y voces oficiales de la casa, y quiénes manejan el backstage (redes, ventas, producción)?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p3" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">4</span>¿Cómo se divide hoy el ingreso de la radio (aire, ventas directas, eventos) y quién vende?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p4" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">5</span>¿Ya monetizan lo digital (lives patrocinados, Reels, WhatsApp)? ¿Qué cobran hoy por un live?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p5" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">6</span>¿Cuál es el mapa de expansión de la red de señales en los próximos 2 años?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p6" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">7</span>¿Qué programas tienen archivo de audio/video guardado que podamos convertir en contenido?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p7" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">8</span>¿Cómo prefieren manejar su señal en internet: la plataforma actual, o stream propio con app y podcasts on-demand?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p8" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">9</span>¿Qué segmento quieren crecer primero: la comunidad dominicana, el boricua, o ambos con productos distintos?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p9" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">10</span>¿Qué les frustra de su presencia digital hoy?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p10" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">11</span>¿Miden cuánta gente los escucha por celular? ¿Les interesa medirlo?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p11" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">12</span>¿Quién aprueba proyectos en la emisora y con qué calendario de decisión?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p12" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">13</span>¿Qué resultados en 90 días harían exitosa esta alianza para ustedes?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p13" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+    <details class="pitch365-q"><summary><span class="pitch365-qn">14</span>Si CIMA en 3 años fuera perfecta, ¿qué sería diferente?<span class="pitch365-chev">▾</span></summary><div class="pitch365-qa"><textarea name="p14" placeholder="Su respuesta (opcional)…"></textarea></div></details>
+
+    <label class="pitch365-reunion"><input type="checkbox" name="reunion" value="Sí — solicita reunión"> Quiero una reunión con 365 Collaboration</label>
+
+    <div class="pitch365-send">
+      <button type="submit" class="pitch365-btn">Enviar mis respuestas ✉</button>
+      <button type="button" class="pitch365-btn ghost" id="btnMailto365">Enviar desde mi correo</button>
+    </div>
+    <p class="pitch365-priv">Sus respuestas solo se usan para afinar esta propuesta con 365 Collaboration LLC. Sin spam, sin listas.</p>
+  </form>
+
+  <div class="pitch365-thanks" id="pitch-gracias">✅ ¡Recibido! Gracias, señor Bretón — le respondemos en 24–48 horas.<br><span style="color:var(--gray);font-size:13px">365 Collaboration LLC · 365diascollaboration@gmail.com</span></div>
+
+  <p class="pitch365-foot"><b>365 Collaboration LLC</b> · nanoboypr.com · 365diascollaboration@gmail.com — Hecho con verdad y precisión · PR–RD 2026</p>
+</div>
+
+<script>
+(function(){
+  /* Reveal al scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.1});
+  document.querySelectorAll("#pitch-check-365 .pitch365-reveal").forEach(function(el){ io.observe(el); });
+
+  /* Fallback mailto */
+  var b = document.getElementById("btnMailto365");
+  if (b) b.addEventListener("click", function(){
+    var f = document.getElementById("pitchForm365");
+    var g = function(n){ var el=f.elements[n]; return el && el.value ? el.value.trim() : ""; };
+    var body = "PITCH CHECK · CIMA 103.7 · 365 Collaboration\n" +
+      "Nombre: " + g("nombre") + "\nEmail: " + g("email") + "\nCargo: " + g("cargo") +
+      "\nWhatsApp: " + g("whatsapp") + "\n" + "-".repeat(46) + "\n";
+    for (var i=1;i<=14;i++){ var v = g("p"+i); if (v) body += "P"+i+": "+v+"\n\n"; }
+    body += "Reunión: " + (f.elements["reunion"].checked ? "SÍ" : "—") + "\n";
+    location.href = "mailto:365diascollaboration@gmail.com?subject=" +
+      encodeURIComponent("Pitch Check · CIMA 103.7 · " + (g("nombre")||"365 Collaboration")) +
+      "&body=" + encodeURIComponent(body);
+  });
+
+  /* Estado de gracias tras el redirect de FormSubmit (#pitch-gracias) */
+  if (location.hash === "#pitch-gracias"){
+    var th = document.getElementById("pitch-gracias");
+    if (th){ th.classList.add("show"); setTimeout(function(){ th.scrollIntoView({behavior:"smooth"}); }, 300); }
+  }
+})();
+</script>
+</section>
+<!-- ═══════════════ 365-PITCH-END ═══════════════ -->
+
 <!-- Toast + FAB -->
 <div class="toast" id="toast" role="status"></div>
 <a href="#vivo" class="fab-listen" id="fabListen">▶ Escuchar</a>
